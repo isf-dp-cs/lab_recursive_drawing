@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "lab_file_handling"
+name = "lab_recursive_drawing"
 version = "0.1.0"
 description = ""
 authors = ["britte <bgenzlinger@isf.edu.hk>"]

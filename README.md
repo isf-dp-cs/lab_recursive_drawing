@@ -1,3 +1,15 @@
-# lab_file_handling
+# lab_recursive_drawing
 
-Practice exercises for file handling using readline() and while loops.
+Lab to show students realistic applications for recursive algorithms:
+- Searching through nested folders
+- Drawing fractals  
+
+This lab requires knowledge of:
+- loops
+- conditionals
+- functions with parameters
+
+Does not require knowledge of:
+- lists, tuples or data structures
+- OOP
+- modulo
