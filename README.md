@@ -1,15 +1,19 @@
 # lab_recursive_drawing
 
-Lab to show students realistic applications for recursive algorithms:
+**Lab to show students realistic applications for recursive algorithms:**
 - Searching through nested folders
 - Drawing fractals  
 
-This lab requires knowledge of:
+<br>
+
+*Requires knowledge of:*
 - loops
 - conditionals
 - functions with parameters
 
-Does not require knowledge of:
+<br>
+
+*Does not require knowledge of:*
 - lists, tuples or data structures
 - OOP
 - modulo

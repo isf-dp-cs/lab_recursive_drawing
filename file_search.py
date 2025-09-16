@@ -6,24 +6,21 @@ def find_file(folder, target):
         folder (string): filepath of the folder to search
         target (string): name of the file to find
     """
-    folder = os.path.abspath(folder) # Use the folder's absolute path.
+    folder = os.path.abspath(folder) # Get the folder's absolute path.
 
     # Loop over every file and subfolder in the folder:
     for name in os.listdir(folder):
         filepath = os.path.join(folder, name)
         
-        # base case (it's a file)
-        if os.path.isfile(filepath):
-            if target == name.lower():
-                print(filepath)
-                
-        # recusive case (it's a folder)
-        elif os.path.isdir(filepath):
-            find_file(filepath, target)
+
+        # TODO: add the base case
+        
+        # TODO: add the recursive case
+
 
 def print_python_files(folder):
     """Recursively prints the names of all python files in a folder.
-    Parameters: 
+    Parameter: 
         folder (string): filepath of the folder to search
     """
 
@@ -32,23 +29,22 @@ def print_python_files(folder):
     # loop over every file and subfolder in the folder:
     for name in os.listdir(folder):
         filepath = os.path.join(folder, name)
-        # base case (it's a file)
-        if os.path.isfile(filepath):
-            # check if it's a python file
-            if '.py' in name:
-                print(name)
-        # recusive case (it's a folder)
-        elif os.path.isdir(filepath):
-            print_python_files(filepath) # recursive call
+        
+
+        # TODO: add the base case
+        
+        # TODO: add the recursive case
 
 
 
-print('Print all python files on Desktop')
-desktop_path = os.path.expanduser('~/Desktop')
-print_python_files(desktop_path)
 
-
-print('\nFind a filepath by filename')
-filename = "file_search.py" # file you're searching for
+print('Printing all python files on Desktop...')
 desktop_path = os.path.expanduser('~/Desktop') # start at the desktop
-find_file(desktop_path, filename) # call recursive function
+print_python_files(desktop_path) # call recursive function
+print('----------all done---------\n')
+
+
+print('Find a filepath by filename...')
+desktop_path = os.path.expanduser('~/Desktop') # start at the desktop
+find_file(desktop_path, "file_search.py") # call recursive function
+print('----------all done---------\n')
