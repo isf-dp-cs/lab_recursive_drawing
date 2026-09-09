@@ -1,6 +1,6 @@
 from turtle import *
 
-# 💻 TODO: Construct the koch curve and snowflake
+# 💻 TODO: Construct recursive function for a drawing of your choice!
 
 
 
