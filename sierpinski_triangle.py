@@ -1,40 +1,46 @@
-import turtle
-turtle.tracer(5, 0) # makes the drawing fast
-turtle.hideturtle() # hides the arrow for aesthetics
-turtle.penup() # pen is lifted until needed
+from turtle import *
 
-
-def triangle(size, loc):
-    """ Draws an equilateral triangle pointing north. 
-    Parameters: 
-        size (int):  side length 
-        loc (turtle.Vec2D): location of the bottom left corner
-    """
-    turtle.goto(loc) # go to the starting location
-    turtle.setheading(60) # point upward at a 60 degree angle
-
-    turtle.pendown() # start drawing
+def triangle(side_length):
+    """Draws an equilaterial triangle"""
+    
     for i in range(3):
-        turtle.forward(size) 
-        turtle.right(120)
-    turtle.penup() # stop drawing
+        forward(side_length) 
+        left(120)
 
 
-def sierpinsky(size, loc):
-    """ Draws a sierspinsky triangle. 
-    Parameters: 
-        size (int):  side length 
-        loc (turtle.Vec2D): location of the bottom left corner
-    """
+def sierpinsky(n, side_length):
+    """ Draws a sierspinsky triangle."""
+    if n== 1:
+        triangle(side_length)
+
+    else:
+        sierpinsky(n-1,side_length) # call recursive function
+        forward(side_length)
+        sierpinsky(n-1,side_length)
 
 
-    # your code goes here
-    return
+        left(120)
+        forward(side_length)
+        right(120)
 
+        sierpinsky(n-1,side_length)
 
+        left(60)
+        back(side_length)
+        right(60)
+        
 
-turtle.goto(-200,-200) # move for a centered triangle
-start_loc = turtle.pos() # get my current position
-sierpinsky(400, start_loc) # call recursive function
+if __name__ == "__main__":
 
-turtle.exitonclick() # drawing stays on screen
+    # set up position and speed
+    speed(9)    # 1 is slowest, 0 is fastest
+    penup()
+    goto(-200,200)
+    pendown()
+
+    # Draw tree
+    sierpinsky(4,50)
+         
+
+    # Keep the window open until clicked
+    input()
